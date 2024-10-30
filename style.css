@@ -6,9 +6,9 @@
 }
 
 body {
-    background-color: #111;
-    color: #fff;
-    font-family: 'Roboto', sans-serif;
+    background-color: rgba(0, 0, 0, 0.9); /* Dark overlay */
+    color: #00ff00; /* Terminal green text */
+    font-family: 'Courier New', monospace; /* Dev-style font */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,11 +16,28 @@ body {
     height: 100vh;
     margin: 0;
     padding: 0;
+    position: relative;
+    overflow: hidden;
 }
 
+/* Fullscreen Background */
+#background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    transition: background-image 1s ease-in-out;
+}
+
+/* Header styling */
 .main-header {
     text-align: center;
     margin-bottom: 50px;
+    z-index: 1;
 }
 
 .main-header h1 {
@@ -30,36 +47,42 @@ body {
 
 .main-header p {
     font-size: 1.2em;
-    color: #aaa;
+    color: #00ff00; /* Terminal green */
 }
 
+/* Dev-style buttons */
 .button-container {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
+    z-index: 1;
 }
 
 .modern-button {
-    background-color: #222;
-    color: #00aaff;
+    background-color: #111;
+    color: #00ff00;
     padding: 15px 30px;
+    border: 2px solid #00ff00;
     border-radius: 5px;
     text-decoration: none;
     font-size: 1.5em;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .modern-button:hover {
-    background-color: #333;
+    background-color: #00ff00;
+    color: #000000;
 }
 
+/* Footer */
 footer {
     position: absolute;
     bottom: 20px;
     text-align: center;
-    color: #777;
+    color: #00ff00;
+    z-index: 1;
 }
 
 .other-sites-nav ul {
@@ -73,7 +96,7 @@ footer {
 }
 
 .other-sites-nav a {
-    color: #00aaff;
+    color: #00ff00;
     text-decoration: none;
     font-weight: bold;
 }
